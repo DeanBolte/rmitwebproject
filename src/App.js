@@ -1,5 +1,6 @@
+import './App.css';
 import { useState } from 'react';
-import { BrowserRouter as Router, Switch, Route, withRouter } from "react-router-dom"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 import Landing from './components/Landing';
 import Forum from './components/Forum';
@@ -9,9 +10,15 @@ function App() {
   return (
     <Router>
         <Switch>
-          <Route exact path={"/"} component={Landing} />
-          <Route exact path={"/forum"} component={Forum} />
-          <Route exact path={"/settings"} component={Settings} />
+          <Route exact path={"/"} >
+            <Landing />
+          </Route>
+          <Route exact path={"/forum"} >
+            <Forum />
+          </Route>
+          <Route exact path={"/settings"} >
+            <Settings />
+          </Route>
         </Switch>
     </Router>
   );
