@@ -13,7 +13,7 @@ function SelectSignInOrSignUp(props) {
 const LandingForm = () => {
   return (
     <div>
-      <SelectSignInOrSignUp sign_in_mode={0} />
+      <SelectSignInOrSignUp sign_in_mode={1} />
     </div>
   )
 }
