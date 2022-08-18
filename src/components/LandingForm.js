@@ -3,7 +3,7 @@ import Signin from './Signin'
 import Signup from './Signup'
 
 function SelectSignInOrSignUp(props) {
-  if(props.sign_in_mode = 0) {
+  if(props.sign_in_mode === 0) {
     return <Signup />
   } else {
     return <Signin />
