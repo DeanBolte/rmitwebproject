@@ -2,7 +2,9 @@ import React from 'react'
 
 const Settings = () => {
   return (
-    <div>Settings</div>
+    <div className='settings-page'>
+      <h1 className='logo'>Settings</h1>
+    </div>
   )
 }
 
