@@ -1,9 +1,16 @@
 import React from 'react'
 import { useState } from 'react';
+import { Route, Redirect } from 'react-router-dom';
 
-const Signin = ({ onSwapForm }) => {
+const url_forum = "http://localhost:3000/forum"
+
+const Signin = ({ onSwapForm, users }) => {
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  // User states
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   // Generate JSX code for error message
   const renderErrorMessage = (name) =>
@@ -11,9 +18,35 @@ const Signin = ({ onSwapForm }) => {
     <div className="error">{errorMessages.message}</div>
   );
 
-  const onSubmit = (e) => {
-    e.preventDefault()
+  // Handle form changes
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+  }
 
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (email === '' || password === '') {
+      // handle error
+    } else {
+      let user
+      for(let u in users) {
+        if (u.email === email) {
+          user = u
+        }
+      }
+      if (user) {
+        if (user.password === password) {
+          localStorage.setItem("user", JSON.stringify(user))
+          window.location = url_forum;
+        }
+      } else {
+        // handle error
+      }
+    } 
   }
 
   const swapForm = () => {
@@ -22,14 +55,14 @@ const Signin = ({ onSwapForm }) => {
 
   return (
     <div className='form'>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={handleSubmit}>
         <h1 className='logo'>Sign In Form</h1>
         <div className="input-container">
-         <input placeholder= 'Email' type="text" name="uname" required />
+         <input placeholder= 'Email' onChange={handleEmail} type="text" name="uname" required />
          {renderErrorMessage("uname")}
         </div>
         <div className="input-container">
-         <input placeholder= 'Password' type="password" name="pass" required />
+         <input placeholder= 'Password' onChange={handlePassword} type="password" name="pass" required />
          {renderErrorMessage("pass")}
         </div>
         <div className="button-container">

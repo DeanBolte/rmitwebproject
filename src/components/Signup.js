@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 
-const Signup = ({ onSwapForm }) => {
+const Signup = ({ onSwapForm, users }) => {
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -38,7 +38,7 @@ const Signup = ({ onSwapForm }) => {
       setError(true);
     } else {
       // all user details submitted
-      localStorage.setItem("user", JSON.stringify(`{ "username": ${name}, "email": ${email}, "password": ${password},}`))
+      users["2"] = `{ "username": ${name}, "email": ${email}, "password": ${password},}`
       setError(false);
 
       // swap to sign in form
