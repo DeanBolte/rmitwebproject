@@ -7,12 +7,12 @@ const LandingForm = () => {
   const [sign_in_mode, setForm] = useState(1)
 
   const onSwapForm = (form_id) => {
-    setForm(0)
+    setForm(form_id)
   }
 
   const SelectSignInOrSignUp = (props) => {
     if(props.form === 0) {
-      return <Signup />
+      return <Signup onSwapForm={onSwapForm}/>
     } else {
       return <Signin onSwapForm={onSwapForm}/>
     }
