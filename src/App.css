@@ -63,15 +63,7 @@ p {
   text-align: center;
 }
 
-.forum-page {
-  background-color: #86BBD8;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  overflow-x: hidden;
-}
+
 
 .settings-page {
   background-color: #2F4858;
@@ -83,9 +75,73 @@ p {
   overflow-x: hidden;
 }
 
-
 .form {
   margin: 30px;
   padding: 30px;
   border-radius: 10px;
+}
+
+.forum-page {
+  display: flex;
+  flex-direction: column;
+  background-color: #86BBD8;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+}
+
+.forum-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.forum-logo {
+  width: 20%;
+  margin-left: 20px;
+  text-align: left;
+}
+
+.forum-search {
+  width: 100%;
+}
+
+.forum-searchbar {
+  background-color: #2F4858;
+  color: #F8FCDA;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 22px 0;
+  border: 2px solid #F8FCDA;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.forum-profile {
+  width: 20%;
+  right: 0;
+  text-align: right;
+}
+
+.forum-post {
+  background-color: #2F4858;
+  margin: 4% 20% 0% 20%;
+  padding: 1% 2% 1% 2%;
+  border-radius: 4px;
+}
+
+.forum-post-body {
+  color: #F8FCDA;
+}
+
+.forum-post-user {
+  color: #F8FCDA;
+}
+
+.forum-post-date {
+  color: #F8FCDA;
+  text-align: right;
 }
