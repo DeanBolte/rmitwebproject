@@ -33,9 +33,10 @@ const Signin = ({ onSwapForm, users }) => {
       // handle error
     } else {
       let user
-      for(let u in users) {
-        if (u.email === email) {
-          user = u
+      for(let i = 0; i < users.length; i++) {
+        console.log(users[i])
+        if (users[i].email === email) {
+          user = users[i]
         }
       }
       if (user) {

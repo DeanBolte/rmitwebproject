@@ -3,18 +3,20 @@ import { useState } from 'react';
 import Signin from './Signin'
 import Signup from './Signup'
 
-const users = {
-  "0":{
+const users = [
+  {   
+      "id":"0",
       "name":"john",
       "email":"john@email.com",
-      "password":"password"
-  },
-  "1":{
-      "name":"doe",
-      "email":"doe@email.com",
       "password":"pass"
-  }
-};
+  },
+  {   
+    "id":"1",
+    "name":"doe",
+    "email":"doe@email.com",
+    "password":"pass"
+},
+];
 
 const LandingForm = () => {
   const [sign_in_mode, setForm] = useState(1)
