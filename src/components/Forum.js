@@ -58,6 +58,8 @@ const Forum = () => {
     },
   ])
 
+  const currentUser = JSON.parse(window.localStorage.getItem("user"));
+
   // very inneficient will need to be replaced later
   const findUserNameByUserId = (id) => {
     for(let key in users) {
@@ -87,7 +89,7 @@ const Forum = () => {
           <input className='forum-searchbar' type='text'/>
         </form>
         <div className='forum-profile'>
-          <p>Profile name</p>
+          <p>{currentUser.name}</p>
         </div>
       </div>
       

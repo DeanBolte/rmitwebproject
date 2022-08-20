@@ -100,9 +100,15 @@ p {
 }
 
 .forum-logo {
+  color: #F8FCDA;
   width: 20%;
-  margin-left: 20px;
+  margin-left: 2%;
   text-align: left;
+}
+
+.forum-logo:hover {
+  color: #2F4858;
+  cursor: pointer;
 }
 
 .forum-search {
@@ -122,8 +128,14 @@ p {
 
 .forum-profile {
   width: 20%;
+  margin-top: 16px;
+  margin-right: 2%;
   right: 0;
   text-align: right;
+}
+
+.forum-profile:hover {
+  cursor: pointer;
 }
 
 .forum-post {
