@@ -6,13 +6,14 @@ import LandingForm from './LandingForm';
 const Landing = () => {
   return (
     <div >
-        <div className='split-big left landing-position'>
-            <h1 className='landing logo'>My LAN</h1>
+        <div className='split split-big left'>
+          <div className='landing-position'>
+            <h1 className='logo'>My LAN</h1>
             <p className='landing'>Welcome to the LAN</p>
+          </div>
         </div>
-
-        <div className='split-small right landing-position'>
-            <LandingForm />
+        <div className='split split-small right'>
+          <LandingForm />
         </div>
     </div>
   )

@@ -46,10 +46,6 @@ p {
   background-color: #86BBD8;
 }
 
-.landing-position {
-  padding-top: 20%;
-}
-
 .landing {
   text-align: center;
 }
@@ -58,10 +54,9 @@ p {
   text-align: center;
 }
 
-.form {
-  margin: 30px;
-  padding: 30px;
-  border-radius: 10px;
+.landing-position {
+  margin-top: 25%;
+  margin-left: 5%;
 }
 
 .forum-page {

@@ -55,7 +55,7 @@ const Signin = ({ onSwapForm, users }) => {
   }
 
   return (
-    <div className='form'>
+    <div className='landing-position'>
       <form onSubmit={handleSubmit}>
         <h1 className='logo'>Sign In Form</h1>
         <div className="input-container">
