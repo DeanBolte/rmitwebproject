@@ -158,3 +158,20 @@ p {
   cursor: pointer;
   font-size: 105%;
 }
+
+.settings-dangerous {
+  color: #D20F1F;
+  font-weight: bold;
+}
+
+.submenu-button {
+  margin: 2% 5% 2% 5%;
+  padding: 2% 5% 2% 5%;
+  text-align: center;
+}
+
+.submenu-button:hover {
+  background-color: #65A9CD;
+  cursor: pointer;
+  font-size: 105%;
+}
