@@ -3,13 +3,13 @@ import { useState } from "react";
 
 const url_landing = "http://localhost:3000/landing"
 
-const SubMenu = ({subMenu}) => {
+const SubMenu = ({menuTag}) => {
   const handleSignOut = () => {
     window.localStorage.removeItem("user");
     window.location = url_landing;
   }
 
-  switch(subMenu) {
+  switch(menuTag) {
     case "app":
       return (
         <div>
