@@ -17,6 +17,10 @@ const users = [
 },
 ];
 
+// urls
+const url_forum = "http://localhost:3000/forum"
+const url_settings = "http://localhost:3000/settings"
+
 const Forum = () => {
   // place holder back end
   const [posts, setPosts] = useState([
@@ -69,9 +73,11 @@ const Forum = () => {
     }
   }
 
+  const goToSettings = () => {
+    window.location = url_settings;
+  }
+
   const ForumPost = (props) => {
-
-
     return (
       <div className='forum-post'>
         <p className='forum-post-user'>{findUserNameByUserId(props.userId)}</p>
@@ -88,7 +94,7 @@ const Forum = () => {
         <form className='forum-search'>
           <input className='forum-searchbar' type='text'/>
         </form>
-        <div className='forum-profile'>
+        <div className='forum-profile' onClick={goToSettings}>
           <p>{currentUser.name}</p>
         </div>
       </div>
