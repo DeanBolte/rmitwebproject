@@ -55,7 +55,7 @@ const Signin = ({ onSwapForm, users }) => {
   }
 
   return (
-    <div className='landing-position'>
+    <div className='landing-position landing-form'>
       <form onSubmit={handleSubmit}>
         <h1 className='logo'>Sign In Form</h1>
         <div className="input-container">
@@ -66,11 +66,9 @@ const Signin = ({ onSwapForm, users }) => {
          <input placeholder= 'Password' onChange={handlePassword} type="password" name="pass" required />
          {renderErrorMessage("pass")}
         </div>
-        <div className="button-container">
-          <input type="submit" />
-        </div>
+        <input className="button-large" type="submit" />
         <div>
-          <p onClick={() => swapForm()}>Don't have an account? click here to sign up!</p>
+          <p className='button-large' onClick={() => swapForm()}>Don't have an account? click here to sign up!</p>
         </div>
       </form>
     </div>

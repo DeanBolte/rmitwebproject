@@ -14,8 +14,8 @@ const Settings = () => {
     <div>
       <div className='split split-tiny left'>
         <p className='settings-menu'>Menu</p>
-        <p className='settings-button' onClick={() => onMenuSwap("user")}>User Settings</p>
-        <p className='settings-button' onClick={() => onMenuSwap("app")}>App Settings</p>
+        <p className='button-small' onClick={() => onMenuSwap("user")}>User Settings</p>
+        <p className='button-small' onClick={() => onMenuSwap("app")}>App Settings</p>
       </div>
       <div className='split split-huge right'>
         <SubMenu menuTag={subMenu}/>

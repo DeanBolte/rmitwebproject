@@ -21,7 +21,7 @@ const SubMenu = ({subMenu}) => {
       return (
         <div>
           <h1 className='logo'>User Settings</h1>
-        <p className='submenu-button settings-dangerous' onClick={handleSignOut}>Sign Out</p>
+        <p className='button-large settings-dangerous' onClick={handleSignOut}>Sign Out</p>
       </div>
     )
   }
