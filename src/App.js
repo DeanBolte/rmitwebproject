@@ -8,6 +8,24 @@ import Settings from './components/Settings';
 import { PrivateRoute } from './components/PrivateRoute';
 
 function App() {
+  // need to move this out into its own file
+  const [users, setUsers] = useState([
+    {   
+        "id":"0",
+        "name":"john",
+        "email":"john@email.com",
+        "password":"pass",
+        "dateofjoining":"18 August 2022"
+    },
+    {   
+      "id":"1",
+      "name":"doe",
+      "email":"doe@email.com",
+      "password":"pass",
+      "dateofjoining":"17 August 2022"
+  },
+  ]);
+
   return (
     <Router>
         <Switch>
@@ -15,13 +33,13 @@ function App() {
             <PrivateRoute />
           </Route>
           <Route exact path={"/landing"} >
-            <Landing />
+            <Landing users={users} />
           </Route>
           <Route exact path={"/forum"} >
-            <Forum />
+            <Forum users={users}/>
           </Route>
           <Route exact path={"/settings"} >
-            <Settings />
+            <Settings users={users} setUsers={setUsers}/>
           </Route>
         </Switch>
     </Router>

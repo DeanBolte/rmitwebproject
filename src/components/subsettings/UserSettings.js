@@ -2,18 +2,26 @@ import React, { useState } from 'react'
 
 const url_landing = "http://localhost:3000/landing";
 
-const UserSettings = () => {
+const UserSettings = (props) => {
   const [user, setUser] = useState(JSON.parse(window.localStorage.getItem("user")))
 
   const handleSignOut = () => {
     window.localStorage.removeItem("user");
     window.location = url_landing;
   }
+  
+  const handleDeleteAccount = () => {
+    
+  }
 
   const handleName = (e) => {
     if(e.keyCode === 13) {  
       user.name = e.target.value;
       localStorage.setItem("user", JSON.stringify(user))
+      
+      console.log(user)
+      props.setUsers({...props.users, [user.id]:user});
+      console.log(props.users)
     }
   }
 
@@ -21,6 +29,11 @@ const UserSettings = () => {
     if(e.keyCode === 13) {  
       user.email = e.target.value;
       localStorage.setItem("user", JSON.stringify(user))
+      for(let key in props.users) {
+        if(props.users[key].id === user.id) {
+          props.users[key].email = user.email
+        }
+      }
     }
   }
 
@@ -44,7 +57,7 @@ const UserSettings = () => {
       </div>
       
       <p className='button-large settings-dangerous' onClick={handleSignOut}>Sign Out</p>
-      <p className='button-large settings-dangerous' onClick={handleSignOut}>Delete Account</p>
+      <p className='button-large settings-dangerous' onClick={handleDeleteAccount}>Delete Account</p>
     </div>
   )
 }

@@ -4,29 +4,11 @@ import { useState } from 'react';
 import ForumHeader from './ForumHeader';
 import ForumPost from './ForumPost';
 
-// placeholder back end
-const users = [
-  {   
-      "id":"0",
-      "name":"john",
-      "email":"john@email.com",
-      "password":"pass",
-      "dateofjoining":"18 August 2022"
-  },
-  {   
-    "id":"1",
-    "name":"doe",
-    "email":"doe@email.com",
-    "password":"pass",
-    "dateofjoining":"17 August 2022"
-},
-];
-
 // urls
 const url_forum = "http://localhost:3000/forum"
 const url_settings = "http://localhost:3000/settings"
 
-const Forum = () => {
+const Forum = (props) => {
   // place holder back end
   const [posts, setPosts] = useState([
     {
@@ -71,9 +53,10 @@ const Forum = () => {
 
   // very inneficient will need to be replaced later
   const findUserNameByUserId = (id) => {
-    for(let key in users) {
-      if(users[key].id === id) {
-        return users[key].name
+    for(let key in props.users) {
+      if(props.users[key].id === id) {
+        console.log(props.users)
+        return props.users[key].name
       }
     }
   }

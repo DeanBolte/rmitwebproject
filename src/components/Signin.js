@@ -33,7 +33,6 @@ const Signin = ({ onSwapForm, users }) => {
     } else {
       let user
       for(let i = 0; i < users.length; i++) {
-        console.log(users[i])
         if (users[i].email === email) {
           user = users[i]
         }

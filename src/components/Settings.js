@@ -4,7 +4,7 @@ import SettingsSelector from './SettingsSelector';
 
 import SubMenu from './SubMenu';
 
-const Settings = () => {
+const Settings = (props) => {
   const [subMenu, setSubMenu] = useState("user")
 
   const onMenuSwap = (menuTag) => {
@@ -17,7 +17,7 @@ const Settings = () => {
         <SettingsSelector onMenuSwap={onMenuSwap} />
       </div>
       <div className='split split-huge right'>
-        <SubMenu menuTag={subMenu}/>
+        <SubMenu menuTag={subMenu} users={props.users} setUsers={props.setUsers} />
       </div>
       
     </div>
