@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 
+import Users from '../../service/users';
+
 const url_landing = "http://localhost:3000/landing";
 
-const UserSettings = (props) => {
+const UserSettings = () => {
   const [user, setUser] = useState(JSON.parse(window.localStorage.getItem("user")))
 
   const handleSignOut = () => {
@@ -19,9 +21,7 @@ const UserSettings = (props) => {
       user.name = e.target.value;
       localStorage.setItem("user", JSON.stringify(user))
       
-      console.log(user)
-      props.setUsers({...props.users, [user.id]:user});
-      console.log(props.users)
+      Users.changeUserNameByUserId(user.id, user.name)
     }
   }
 
@@ -29,11 +29,8 @@ const UserSettings = (props) => {
     if(e.keyCode === 13) {  
       user.email = e.target.value;
       localStorage.setItem("user", JSON.stringify(user))
-      for(let key in props.users) {
-        if(props.users[key].id === user.id) {
-          props.users[key].email = user.email
-        }
-      }
+      
+      Users.changeUserEmailByUserId(user.id, user.email)
     }
   }
 

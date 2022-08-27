@@ -16,6 +16,7 @@ let users = {
 };
 
 class Users {
+    // user data retrieval
     getUserDataByUserId(id) {
         return users[id]; // trim password with database call
     }
@@ -28,6 +29,15 @@ class Users {
                 return users[key].name
             }
         }
+    }
+
+    // editing user data
+    changeUserNameByUserId(id, name) {
+        users[id]["name"] = name;
+    }
+
+    changeUserEmailByUserId(id, email) {
+        users[id]["email"] = email;
     }
 
     // temp until a proper database can be set up

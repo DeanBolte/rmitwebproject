@@ -11,7 +11,7 @@ const SubMenu = (props) => {
       return (<AppSettings />);
     case "user":
     default:
-      return (<UserSettings users={props.users} setUsers={props.setUsers} />);
+      return (<UserSettings />);
   }
 }
 
