@@ -5,7 +5,7 @@ import Auth from '../service/auth';
 
 const url_forum = "http://localhost:3000/forum"
 
-const Signin = ({ onSwapForm, users }) => {
+const Signin = ({ onSwapForm }) => {
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
 

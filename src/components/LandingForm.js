@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Signin from './Signin'
 import Signup from './Signup'
 
-const LandingForm = (props) => {
+const LandingForm = () => {
   const [sign_in_mode, setForm] = useState(1)
 
   const onSwapForm = (form_id) => {
@@ -12,15 +12,15 @@ const LandingForm = (props) => {
 
   const SelectSignInOrSignUp = (props) => {
     if(props.form === 0) {
-      return <Signup onSwapForm={onSwapForm} users={props.users}/>
+      return <Signup onSwapForm={onSwapForm} />
     } else {
-      return <Signin onSwapForm={onSwapForm} users={props.users}/>
+      return <Signin onSwapForm={onSwapForm} />
     }
   }
 
   return (
     <div>
-      <SelectSignInOrSignUp form={sign_in_mode} users={props.users}/>
+      <SelectSignInOrSignUp form={sign_in_mode} />
     </div>
   )
 }

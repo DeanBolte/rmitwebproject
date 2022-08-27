@@ -16,8 +16,8 @@ let users = {
 };
 
 class Users {
-    getUserByUserId(id) {
-        
+    getUserDataByUserId(id) {
+        return users[id]; // trim password with database call
     }
 
     // temp until a proper database can be set up

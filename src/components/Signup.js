@@ -65,11 +65,10 @@ const Signup = ({ onSwapForm, users }) => {
       setError(true);
     } else {
       // all user details submitted
-      Auth.register(name, email, password);
+      const id = Auth.register(name, email, password);
       setError(false);
 
-      // sign in user
-      localStorage.setItem("user", JSON.stringify(users[2]))
+      // go to forum after signing in
       window.location = url_forum;
     }
   }

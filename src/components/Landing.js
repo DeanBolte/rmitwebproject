@@ -2,7 +2,7 @@ import React from 'react';
 
 import LandingForm from './LandingForm';
 
-const Landing = (props) => {
+const Landing = () => {
   return (
     <div >
         <div className='split split-big left'>
@@ -13,7 +13,7 @@ const Landing = (props) => {
           </div>
         </div>
         <div className='split split-small right'>
-          <LandingForm users={props.users}/>
+          <LandingForm />
         </div>
     </div>
   )
