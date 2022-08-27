@@ -40,6 +40,11 @@ class Users {
         users[id]["email"] = email;
     }
 
+    deleteUserById(id) {
+        delete users[id]
+        console.log(users)
+    }
+
     // temp until a proper database can be set up
     retrieveUsers() {
         return users;

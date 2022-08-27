@@ -13,7 +13,7 @@ const UserSettings = () => {
   }
   
   const handleDeleteAccount = () => {
-    
+    Users.deleteUserById(user.id)
   }
 
   const handleName = (e) => {
