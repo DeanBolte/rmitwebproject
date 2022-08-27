@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
 
+import ForumHeader from './ForumHeader';
+
 // placeholder back end
 const users = [
   {   
@@ -62,7 +64,7 @@ const Forum = () => {
     },
   ])
 
-  const currentUser = JSON.parse(window.localStorage.getItem("user"));
+  const [currentUser, setCurrentUser] = useState(JSON.parse(window.localStorage.getItem("user")));
 
   // very inneficient will need to be replaced later
   const findUserNameByUserId = (id) => {
@@ -71,10 +73,6 @@ const Forum = () => {
         return users[key].name
       }
     }
-  }
-
-  const goToSettings = () => {
-    window.location = url_settings;
   }
 
   const ForumPost = (props) => {
@@ -89,15 +87,7 @@ const Forum = () => {
 
   return (
     <div className='forum-page'>
-      <div className='forum-header'>
-        <h1 className='forum-logo'>MY LAN</h1>
-        <form className='forum-search'>
-          <input className='forum-searchbar' type='text'/>
-        </form>
-        <div className='forum-profile' onClick={goToSettings}>
-          <p>{currentUser.name}</p>
-        </div>
-      </div>
+      <ForumHeader currentUser={currentUser}/>
       
       <div className='forum-body'>
         <form className='forum-postform'>
