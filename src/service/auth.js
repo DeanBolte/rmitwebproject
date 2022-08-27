@@ -1,19 +1,19 @@
-let users = [
-    {   
+let users = {
+    0:{   
         "id":"0",
         "name":"john",
         "email":"john@email.com",
         "password":"pass",
         "dateofjoining":"18 August 2022"
     },
-    {   
+    1:{   
       "id":"1",
       "name":"doe",
       "email":"doe@email.com",
       "password":"pass",
       "dateofjoining":"17 August 2022"
   },
-];
+};
 
 class Auth {
     signin(email, password) {
@@ -35,6 +35,12 @@ class Auth {
               // No user
               return false
             }
+    }
+
+    register(name, email, password) {
+        const key = Object.keys(users).length + 1
+        const date = new Date()
+        users = {...users, key:{"id":key, "name":name, "email":email, "password":password, "dateofjoining":date}}
     }
 }
 

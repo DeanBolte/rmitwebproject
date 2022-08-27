@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState } from 'react';
 
+import Auth from '../service/auth';
+
 const url_forum = "http://localhost:3000/forum";
 
 const Signup = ({ onSwapForm, users }) => {
@@ -62,11 +64,8 @@ const Signup = ({ onSwapForm, users }) => {
     if (name === '' || email === '' || password === '') {
       setError(true);
     } else {
-      // get date for join date
-      let date = new Date();
-
       // all user details submitted
-      users.push({"id":2,"name":name,"email":email,"password":password,"dateofjoining":date});
+      Auth.register(name, email, password);
       setError(false);
 
       // sign in user
