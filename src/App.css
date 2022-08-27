@@ -95,6 +95,14 @@ p {
   background-color: #F8FCDA;
 }
 
+.input-text:invalid {
+  border: 2px outset #D20F1F;
+}
+
+.input-text:placeholder-shown {
+  border: 2px outset #65A9CD;
+}
+
 .input-label {
   margin-left: 30%;
   width: 40%;
