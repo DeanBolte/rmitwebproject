@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 
 import ForumHeader from './ForumHeader';
+import ForumPost from './ForumPost';
 
 // placeholder back end
 const users = [
@@ -75,16 +76,6 @@ const Forum = () => {
     }
   }
 
-  const ForumPost = (props) => {
-    return (
-      <div className='forum-post'>
-        <p className='forum-post-user'>{findUserNameByUserId(props.userId)}</p>
-        <p className='forum-post-body'>{props.body}</p>
-        <p className='forum-post-date'>{props.creationDate}</p>
-      </div>
-    )
-  }
-
   return (
     <div className='forum-page'>
       <ForumHeader currentUser={currentUser}/>
@@ -95,7 +86,7 @@ const Forum = () => {
         </form>
         <div className='forum-feed'>
           {posts.map((post) => (
-            <ForumPost
+            <ForumPost findUserNameByUserId={findUserNameByUserId}
               userId={post.userId}
               creationDate={post.creationDate}
               body={post.body}
