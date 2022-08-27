@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState } from 'react';
 
+import Auth from '../service/auth';
+
 const url_forum = "http://localhost:3000/forum"
 
 const Signin = ({ onSwapForm, users }) => {
@@ -31,19 +33,11 @@ const Signin = ({ onSwapForm, users }) => {
     if (email === '' || password === '') {
       // handle error
     } else {
-      let user
-      for(let i = 0; i < users.length; i++) {
-        if (users[i].email === email) {
-          user = users[i]
-        }
-      }
-      if (user) {
-        if (user.password === password) {
-          localStorage.setItem("user", JSON.stringify(user))
-          window.location = url_forum;
-        }
+      if(Auth.signin(email, password)) {
+        window.location = url_forum;
       } else {
         // handle error
+        alert("email or password incorrect")
       }
     } 
   }
