@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState } from 'react';
-import { Route, Redirect } from 'react-router-dom';
 
 const url_forum = "http://localhost:3000/forum"
 
@@ -57,16 +56,18 @@ const Signin = ({ onSwapForm, users }) => {
   return (
     <div className='landing-position landing-form'>
       <form onSubmit={handleSubmit}>
-        <h1 className='logo'>Sign In Form</h1>
+        <h1 className='form-header'>Sign In Form</h1>
         <div className="input-container">
-         <input placeholder= 'Email' onChange={handleEmail} type="text" name="uname" required />
-         {renderErrorMessage("uname")}
+          <label className='input-label'>Email</label>
+          <input className='input-text' placeholder= 'Email' onChange={handleEmail} type="text" name="uname" required />
+          {renderErrorMessage("uname")}
         </div>
         <div className="input-container">
-         <input placeholder= 'Password' onChange={handlePassword} type="password" name="pass" required />
+          <label className='input-label'>Password</label>
+          <input className='input-text' placeholder= 'Password' onChange={handlePassword} type="password" name="pass" required />
          {renderErrorMessage("pass")}
         </div>
-        <input className="button-large" type="submit" />
+        <input className="input-button" type="submit" />
         <div>
           <p className='button-large' onClick={() => swapForm()}>Don't have an account? click here to sign up!</p>
         </div>
