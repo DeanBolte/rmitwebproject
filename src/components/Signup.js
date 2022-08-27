@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState } from 'react';
 
+const url_forum = "http://localhost:3000/forum";
+
 const Signup = ({ onSwapForm, users }) => {
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -60,12 +62,16 @@ const Signup = ({ onSwapForm, users }) => {
     if (name === '' || email === '' || password === '') {
       setError(true);
     } else {
+      // get date for join date
+      let date = new Date();
+
       // all user details submitted
-      users["2"] = `{ "username": ${name}, "email": ${email}, "password": ${password},}`
+      users.push({"id":2,"name":name,"email":email,"password":password,"dateofjoining":date});
       setError(false);
 
-      // swap to sign in form
-      swapForm()
+      // sign in user
+      localStorage.setItem("user", JSON.stringify(users[2]))
+      window.location = url_forum;
     }
   }
 
