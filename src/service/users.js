@@ -20,6 +20,16 @@ class Users {
         return users[id]; // trim password with database call
     }
 
+    // very inneficient will need to be replaced later
+    findUserNameByUserId(id) {
+        for(let key in users) {
+            if(users[key].id === id) {
+                console.log(users)
+                return users[key].name
+            }
+        }
+    }
+
     // temp until a proper database can be set up
     retrieveUsers() {
         return users;
