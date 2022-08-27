@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import SettingsSelector from './SettingsSelector';
 
 import SubMenu from './SubMenu';
 
@@ -13,9 +14,7 @@ const Settings = () => {
   return (
     <div>
       <div className='split split-tiny left'>
-        <p className='settings-menu'>Menu</p>
-        <p className='button-small' onClick={() => onMenuSwap("user")}>User Settings</p>
-        <p className='button-small' onClick={() => onMenuSwap("app")}>App Settings</p>
+        <SettingsSelector onMenuSwap={onMenuSwap} />
       </div>
       <div className='split split-huge right'>
         <SubMenu menuTag={subMenu}/>
