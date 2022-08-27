@@ -52,30 +52,32 @@ const Signup = ({ onSwapForm, users }) => {
   }
 
   return (
-    <div className='landing-position'>
+    <div className='landing-position landing-form signup-margin'>
       <form onSubmit={handleSubmit}>
-        <h1 className='logo'>Sign Up Form</h1>
+        <h1 className='form-header'>Sign Up Form</h1>
         <div className="input-container">
-         <input placeholder= 'Name' onChange={handleName} type="text" name="uname" required />
-         {renderErrorMessage("uname")}
-        </div>
-        <div className="input-container">
-         <input placeholder= 'Email' onChange={handleEmail} type="text" name="email" required />
-         {renderErrorMessage("email")}
+          <label className='input-label'>Name</label>
+          <input className='input-text' placeholder= 'Name' onChange={handleName} type="text" name="uname" required />
+          {renderErrorMessage("uname")}
         </div>
         <div className="input-container">
-         <input placeholder= 'Password' onChange={handlePassword} type="password" name="pass" required />
-         {renderErrorMessage("pass")}
+          <label className='input-label'>Email</label>
+          <input className='input-text' placeholder= 'Email' onChange={handleEmail} type="text" name="email" required />
+          {renderErrorMessage("email")}
         </div>
         <div className="input-container">
-         <input placeholder= 'Confirm Password' type="password" name="pass" required />
-         {renderErrorMessage("pass")}
+          <label className='input-label'>Password</label>
+          <input className='input-text' placeholder= 'Password' onChange={handlePassword} type="password" name="pass" required />
+          {renderErrorMessage("pass")}
         </div>
-        <div className="button-container">
-          <input type="submit" />
+        <div className="input-container">
+          <label className='input-label'>Confirm Password</label>
+          <input className='input-text' placeholder= 'Confirm Password' type="password" name="pass" required />
+          {renderErrorMessage("pass")}
         </div>
+        <input className='input-button' type="submit" />
         <div>
-          <p onClick={() => swapForm()}>Already have an account? click here to sign in!</p>
+          <p className='button-large' onClick={() => swapForm()}>Already have an account? click here to sign in!</p>
         </div>
       </form>
     </div>
