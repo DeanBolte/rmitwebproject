@@ -2,13 +2,8 @@ import Users from "./users"
 
 class Auth {
     signin(email, password) {
-        let users = Users.retrieveUsers(); // temp until proper database
-        let user
-        for(let i = 0; i < users.length; i++) {
-            if (users[i].email === email) {
-                user = users[i]
-            }
-        }
+        let user = Users.getUserDataByEmail(email)
+        console.log(user)
         if (user) {
             if (user.password === password) {
                 localStorage.setItem("user", JSON.stringify(user))
@@ -18,7 +13,7 @@ class Auth {
                 return false
             }
         } else {
-            // No user
+            // No user found
             return false
         }
     }

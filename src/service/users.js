@@ -21,14 +21,26 @@ class Users {
         return users[id]; // trim password with database call
     }
 
-    // very inneficient will need to be replaced later
-    findUserNameByUserId(id) {
-        for(let key in users) {
-            if(users[key].id === id) {
-                console.log(users)
-                return users[key].name
+    getUserDataByEmail(email) {
+        for(let i = 0; i < Object.keys(users).length; i++) {
+            console.log(users[i])
+            if (users[i].email === email) {
+                return users[i]
             }
         }
+        return null;
+    }
+
+    getUserNameByUserId(id) {
+        return users[id]["name"]
+    }
+
+    getUserEmailByUserId(id) {
+        return users[id]["email"]
+    }
+
+    getUserDateByUserId(id) {
+        return users[id]["dateofjoining"]
     }
 
     // editing user data
