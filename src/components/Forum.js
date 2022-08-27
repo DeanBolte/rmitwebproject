@@ -10,13 +10,15 @@ const users = [
       "id":"0",
       "name":"john",
       "email":"john@email.com",
-      "password":"pass"
+      "password":"pass",
+      "dateofjoining":"18 August 2022"
   },
   {   
     "id":"1",
     "name":"doe",
     "email":"doe@email.com",
-    "password":"pass"
+    "password":"pass",
+    "dateofjoining":"17 August 2022"
 },
 ];
 
