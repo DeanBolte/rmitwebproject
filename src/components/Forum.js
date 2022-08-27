@@ -15,7 +15,7 @@ const Forum = () => {
 
         </form>
         <div className='forum-feed'>
-          {Posts.getAllPosts.map((post) => (
+          {Posts.getAllPosts().map((post) => (
             <ForumPost
               userId={post.userId}
               creationDate={post.creationDate}
