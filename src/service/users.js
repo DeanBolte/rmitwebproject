@@ -21,7 +21,12 @@ class Users {
     // user data retrieval
     getUserDataByUserId(id) {
         const users = this.retrieveUsers();
-        return users[id]; // trim password with database call
+        const user = users[id];
+        if(user) {
+            return user; // trim password with database call
+        } else {
+            return false;
+        }
     }
 
     getUserDataByEmail(email) {
@@ -36,17 +41,33 @@ class Users {
 
     getUserNameByUserId(id) {
         const users = this.retrieveUsers();
-        return users[id]["name"]
+        const user = users[id];
+        if(user) {
+            return user["name"]; // trim password with database call
+        } else {
+            return false;
+        }
     }
 
     getUserEmailByUserId(id) {
         const users = this.retrieveUsers();
-        return users[id]["email"]
+        const user = users[id];
+        if(user) {
+            return users["email"]; // trim password with database call
+        } else {
+            return false;
+        }
     }
 
     getUserDateByUserId(id) {
         const users = this.retrieveUsers();
-        return users[id]["dateofjoining"]
+        const user = users[id];
+        if(user) {
+            return user["dateofjoining"]; // trim password with database call
+        } else {
+            return false;
+        }
+        
     }
 
     // editing user data

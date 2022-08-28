@@ -20,10 +20,10 @@ class Auth {
 
     register(name, email, password) {
         let users = Users.retrieveUsers(); // temp until proper data base
-        const key = Object.keys(users).length + 1
+        const key = Object.keys(users).length
         const date = new Date()
         const userData = {"id":key, "name":name, "email":email, "password":password, "dateofjoining":date}
-        users = {...users, key:userData}
+        users = {...users, [key]:userData}
         Users.updateUsers(users)
         localStorage.setItem("user", JSON.stringify(userData))
     }
