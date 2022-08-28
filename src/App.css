@@ -189,6 +189,46 @@ p {
   color: #F8FCDA;
 }
 
+.post-form {
+  background-color: #2F4858;
+  margin: 4% 20% 0% 20%;
+  padding: 1% 2%;
+  border-radius: 4px;
+}
+
+.post-header {
+  
+}
+
+.post-text {
+  width: 100%;
+  height: 120px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  color: #F8FCDA;
+  border-color: #86BBD8;
+  background-color:#65A9CD;
+  resize: none;
+}
+
+.post-text:focus {
+  background-color: #65A9CD;
+}
+
+.post-submit {
+  width: 10%;
+  margin: 4px;
+  margin-left: 90%;
+  padding: 8px 16px;
+  color: #F8FCDA;
+  border-color: #243742;
+  background-color: #2F4858;
+}
+
+.post-submit:hover {
+  background-color: #243742;
+}
+
 .forum-post {
   background-color: #2F4858;
   margin: 4% 20% 0% 20%;

@@ -37,7 +37,7 @@ class Posts {
   pushPost(post) {
     let posts = this.retrievePosts()
     const key = Object.keys(posts)
-    posts = {...posts, key:post}
+    posts = {...posts, [key]:post}
     this.updatePosts(posts)
   }
 

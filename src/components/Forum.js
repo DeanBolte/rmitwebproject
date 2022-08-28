@@ -11,8 +11,10 @@ const Forum = () => {
       <ForumHeader />
       
       <div className='forum-body'>
-        <form className='forum-postform'>
-
+        <form className='post-form'>
+          <p className='post-header'>Body of post</p>
+          <textarea className='post-text' type='text' name='body' required />
+          <input className='post-submit' type='submit' name='submit' value='Post' />
         </form>
         <div className='forum-feed'>
           {Posts.getAllPosts().map((post) => (
