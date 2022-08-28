@@ -30,7 +30,8 @@ class Posts {
 
   // getters
   getAllPosts() {
-    return this.retrievePosts();
+    // returns all posts in reverse chronological order
+    return this.retrievePosts().map(post => post).reverse();
   }
 
   // setters
