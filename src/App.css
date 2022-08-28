@@ -227,17 +227,30 @@ p {
 
 .post-submit:hover {
   background-color: #243742;
+  cursor: pointer;
 }
 
 .forum-post {
   background-color: #2F4858;
-  margin: 4% 20% 0% 20%;
+  margin: 2% 20%;
   padding: 1% 2% 1% 2%;
   border-radius: 4px;
 }
 
 .forum-post-body {
   color: #F8FCDA;
+}
+
+.forum-post-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.forum-post-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .forum-post-user {
@@ -247,6 +260,17 @@ p {
 .forum-post-date {
   color: #F8FCDA;
   text-align: right;
+}
+
+.forum-post-delete {
+  padding: 8px 16px;
+  color: #D20F1F;
+  border: 2px outset #243742;
+  cursor: pointer;
+}
+
+.forum-post-delete:hover {
+  background-color: #243742;
 }
 
 .settings-menu {
