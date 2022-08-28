@@ -20,52 +20,65 @@ class Users {
 
     // user data retrieval
     getUserDataByUserId(id) {
-        return this.users[id]; // trim password with database call
+        const users = this.retrieveUsers();
+        return users[id]; // trim password with database call
     }
 
     getUserDataByEmail(email) {
-        for(let i = 0; i < Object.keys(this.users).length; i++) {
-            console.log(this.users[i])
-            if (this.users[i].email === email) {
-                return this.users[i]
+        const users = this.retrieveUsers();
+        for(let i = 0; i < Object.keys(users).length; i++) {
+            console.log(users[i])
+            if (users[i].email === email) {
+                return users[i]
             }
         }
         return null;
     }
 
     getUserNameByUserId(id) {
-        console.log(this.users)
-        return this.users[id]["name"]
+        const users = this.retrieveUsers();
+        return users[id]["name"]
     }
 
     getUserEmailByUserId(id) {
-        return this.users[id]["email"]
+        const users = this.retrieveUsers();
+        return users[id]["email"]
     }
 
     getUserDateByUserId(id) {
-        return this.users[id]["dateofjoining"]
+        const users = this.retrieveUsers();
+        return users[id]["dateofjoining"]
     }
 
     // editing user data
     changeUserNameByUserId(id, name) {
-        this.users[id]["name"] = name;
+        const users = this.retrieveUsers();
+        users[id]["name"] = name;
+        this.updateUsers(users);
     }
 
     changeUserEmailByUserId(id, email) {
-        this.users[id]["email"] = email;
+        const users = this.retrieveUsers();
+        users[id]["email"] = email;
+        this.updateUsers(users);
     }
 
     deleteUserById(id) {
-        delete this.users[id]
-        console.log(this.users)
+        const users = this.retrieveUsers();
+        delete users[id]
+        this.updateUsers(users)
     }
 
     // temp until a proper database can be set up
+    instantiateUsers() {
+        localStorage.setItem("users", JSON.stringify(this.users))
+    }
     retrieveUsers() {
-        return this.users;
+        return JSON.parse(localStorage.getItem("users"));
     }
     updateUsers(newUsers) {
         this.users = newUsers
+        this.instantiateUsers()
     }
 }
 
