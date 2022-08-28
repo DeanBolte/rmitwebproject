@@ -30,7 +30,7 @@ class Posts {
 
   // getters
   getAllPosts() {
-    return this.posts;
+    return this.retrievePosts();
   }
 
   // setters
