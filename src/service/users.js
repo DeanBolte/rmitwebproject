@@ -27,8 +27,7 @@ class Users {
     getUserDataByEmail(email) {
         const users = this.retrieveUsers();
         for(let i = 0; i < Object.keys(users).length; i++) {
-            console.log(users[i])
-            if (users[i].email === email) {
+            if (users[i] && users[i].email === email) {
                 return users[i]
             }
         }

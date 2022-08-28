@@ -13,7 +13,8 @@ const UserSettings = () => {
   }
   
   const handleDeleteAccount = () => {
-    Users.deleteUserById(user.id)
+    Users.deleteUserById(user.id);
+    handleSignOut();
   }
 
   const handleName = (e) => {
