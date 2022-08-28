@@ -48,7 +48,11 @@ const Forum = () => {
           <p className='post-header'>Body of post</p>
           <textarea className='post-text' placeholder='Enter a message under 250 characters' onChange={handleBody} type='text' name='body' required />
           {renderErrorMessage("body")}
-          <input className='post-submit' type='submit' name='submit' value='Post' />
+          <div className='post-footer'>
+            <p className='post-image'>Attach Image</p>
+            <input className='post-submit' type='submit' name='submit' value='Post' />
+          </div>
+          
         </form>
         <div className='forum-feed'>
           {Posts.getAllPosts().map((post) => (

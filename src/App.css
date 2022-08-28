@@ -216,6 +216,12 @@ p {
   background-color: #65A9CD;
 }
 
+.post-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .post-text:invalid {
   border: 2px solid #D20F1F;
 }
@@ -224,11 +230,26 @@ p {
   border: 2px outset #65A9CD;
 }
 
+.post-image {
+  width: 15%;
+  margin: 4px;
+  padding: 8px;
+  text-align: center;
+  color: #F8FCDA;
+  border: 2px outset #243742;
+  background-color: #2F4858;
+}
+
+.post-image:hover {
+  background-color: #243742;
+  cursor: pointer;
+}
+
 .post-submit {
   width: 10%;
+  height: 100%;
   margin: 4px;
-  margin-left: 90%;
-  padding: 8px 16px;
+  padding: 12px 16px;
   color: #F8FCDA;
   border-color: #243742;
   background-color: #2F4858;
@@ -258,8 +279,8 @@ p {
 
 .forum-post-footer {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 .forum-post-user {
