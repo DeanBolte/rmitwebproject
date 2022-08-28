@@ -1,3 +1,9 @@
+# Project description
+This project is for the assessments of Further Web Programming.
+
+Written by: Dean Bolte s3784365
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
