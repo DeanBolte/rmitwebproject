@@ -31,7 +31,6 @@ class Posts {
   // getters
   getAllPosts() {
     // returns all posts in reverse chronological order
-    console.log(this.retrievePosts())
     return this.retrievePosts().map(post => post).reverse();
   }
 

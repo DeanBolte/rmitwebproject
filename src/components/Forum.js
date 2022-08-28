@@ -19,6 +19,10 @@ const Forum = () => {
     Posts.createPost(user.id, body);
   }
 
+  const handleDeletePost = (id) => {
+    Posts.deletePostByPostId(id)
+  }
+
   return (
     <div className='forum-page'>
       <ForumHeader />
@@ -31,7 +35,7 @@ const Forum = () => {
         </form>
         <div className='forum-feed'>
           {Posts.getAllPosts().map((post) => (
-            <ForumPost
+            <ForumPost handleDeletePost={handleDeletePost}
               userId={post.userId}
               creationDate={post.creationDate}
               body={post.body}
