@@ -9,6 +9,7 @@ import ForumPost from './ForumPost';
 const Forum = () => {
   const [body, setBody] = useState(null)
   const [user] = useState(JSON.parse(localStorage.getItem("user")))
+  const [updatedForum, setUpdatedForum] = useState(null)
 
   const handleBody = (e) => {
     setBody(e.target.value);
@@ -17,10 +18,12 @@ const Forum = () => {
   const handlePost = (e) => {
     e.preventDefault();
     Posts.createPost(user.id, body);
+    setUpdatedForum(new Date())
   }
 
   const handleDeletePost = (id) => {
     Posts.deletePostByPostId(id)
+    setUpdatedForum(new Date())
   }
 
   return (
