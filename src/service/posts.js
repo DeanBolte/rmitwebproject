@@ -18,13 +18,7 @@ class Posts {
         "userId":"0",
         "creationDate":"20/08/2022",
         "body":"Hi, this is a final test post."
-      },
-      {
-        "id":3,
-        "userId":"0",
-        "creationDate":"20/08/2022",
-        "body":"Hi, this is a final test post."
-      },
+      }
     ];
   }
 
@@ -38,7 +32,8 @@ class Posts {
   createPost(userId, body) {
     let posts = this.retrievePosts()
     const key = Object.keys(posts).length
-    this.pushPost({"id":key,"userId":userId,"creationDate":"20/08/2022","body":body})
+    const date = new Date().toLocaleDateString("en-GB", { hour:"2-digit", minute:"2-digit"})
+    this.pushPost({"id":key,"userId":userId,"creationDate":date,"body":body})
   }
 
   pushPost(post) {
